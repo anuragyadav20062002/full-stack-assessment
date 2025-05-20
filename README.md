@@ -77,33 +77,6 @@ Content-Type: application/json
 ```
 All fields (name, email, phone, address) are required.
 
-## Project Structure
-
-```
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   └── services/
-└── backend/
-    ├── controllers/
-    ├── models/
-    └── routes/
-```
-
-## Testing the API
-
-You can use tools like Postman or cURL to test the API. Here's a quick example:
-
-```bash
-# Get all users
-curl https://full-stack-assessment-0leg.onrender.com/api/users
-
-# Create a new user
-curl -X POST https://full-stack-assessment-0leg.onrender.com/api/users \
-  -H "Content-Type: application/json" \
-  -d '{"name":"John Doe","email":"john@example.com","phone":"1234567890","address":"123 Main St"}'
-```
 
 ## Note
 
