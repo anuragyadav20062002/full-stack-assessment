@@ -12,7 +12,7 @@ function App() {
   const fetchUsers = async () => {
     setLoading(true)
     try {
-      const response = await fetch("http://localhost:5000/api/users")
+      const response = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/users`)
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
@@ -38,7 +38,7 @@ function App() {
 
   const handleAddUser = async (userData) => {
     try {
-      const response = await fetch("http://localhost:5000/api/users", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/users`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
