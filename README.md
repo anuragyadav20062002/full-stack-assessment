@@ -1,70 +1,131 @@
-# Getting Started with Create React App
+# User Details Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple full-stack application that lets users submit and manage their personal information. Built as part of a technical assessment.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+- Frontend: [https://full-stack-assessment-ae.netlify.app/](https://full-stack-assessment-ae.netlify.app/)
+- Backend: [https://full-stack-assessment-0leg.onrender.com](https://full-stack-assessment-0leg.onrender.com)
 
-### `npm start`
+## What's Inside?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- A clean form to collect user details (name, email, phone, address)
+- Backend API to store and fetch user information
+- Simple and responsive UI
+- RESTful API endpoints for CRUD operations
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Used
 
-### `npm test`
+- Frontend: React.js
+- Backend: Node.js + Express
+- Database: MongoDB
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+1. Clone the repo
+2. Install dependencies:
+```bash
+# Frontend
+cd frontend
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Backend
+cd backend
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Set up environment variables:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Frontend (.env):
+```
+REACT_APP_API_URL=https://full-stack-assessment-0leg.onrender.com
+```
 
-### `npm run eject`
+Backend (.env):
+```
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Run the app:
+```bash
+# Start backend
+cd backend
+npm run dev
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Start frontend
+cd frontend
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## API Reference
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Base URL: `https://full-stack-assessment-0leg.onrender.com`
 
-## Learn More
+### Endpoints
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Create a new user
+```bash
+POST /api/users
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "phone": "1234567890",
+  "address": "123 Main St"
+}
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Get all users
+```bash
+GET /api/users
+```
 
-### Code Splitting
+3. Get a specific user
+```bash
+GET /api/users/:id
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Update user
+```bash
+PUT /api/users/:id
+{
+  "name": "John Doe Updated",
+  "email": "john.updated@example.com",
+  "phone": "9876543210",
+  "address": "456 New St"
+}
+```
 
-### Analyzing the Bundle Size
+5. Delete user
+```bash
+DELETE /api/users/:id
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Project Structure
 
-### Making a Progressive Web App
+```
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── services/
+└── backend/
+    ├── controllers/
+    ├── models/
+    └── routes/
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Testing the API
 
-### Advanced Configuration
+You can use tools like Postman or cURL to test the API. Here's a quick example using cURL:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+# Create a user
+curl -X POST https://full-stack-assessment-0leg.onrender.com/api/users \
+  -H "Content-Type: application/json" \
+  -d '{"name":"John Doe","email":"john@example.com","phone":"1234567890","address":"123 Main St"}'
 
-### Deployment
+# Get all users
+curl https://full-stack-assessment-0leg.onrender.com/api/users
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
