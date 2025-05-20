@@ -55,11 +55,19 @@ npm start
 
 Base URL: `https://full-stack-assessment-0leg.onrender.com`
 
-### Endpoints
+### Available Endpoints
 
-1. Create a new user
+1. Get all users
+```bash
+GET /api/users
+```
+Returns a list of all users, sorted by creation date (newest first)
+
+2. Create a new user
 ```bash
 POST /api/users
+Content-Type: application/json
+
 {
   "name": "John Doe",
   "email": "john@example.com",
@@ -67,32 +75,7 @@ POST /api/users
   "address": "123 Main St"
 }
 ```
-
-2. Get all users
-```bash
-GET /api/users
-```
-
-3. Get a specific user
-```bash
-GET /api/users/:id
-```
-
-4. Update user
-```bash
-PUT /api/users/:id
-{
-  "name": "John Doe Updated",
-  "email": "john.updated@example.com",
-  "phone": "9876543210",
-  "address": "456 New St"
-}
-```
-
-5. Delete user
-```bash
-DELETE /api/users/:id
-```
+All fields (name, email, phone, address) are required.
 
 ## Project Structure
 
@@ -110,15 +93,19 @@ DELETE /api/users/:id
 
 ## Testing the API
 
-You can use tools like Postman or cURL to test the API. Here's a quick example using cURL:
+You can use tools like Postman or cURL to test the API. Here's a quick example:
 
 ```bash
-# Create a user
+# Get all users
+curl https://full-stack-assessment-0leg.onrender.com/api/users
+
+# Create a new user
 curl -X POST https://full-stack-assessment-0leg.onrender.com/api/users \
   -H "Content-Type: application/json" \
   -d '{"name":"John Doe","email":"john@example.com","phone":"1234567890","address":"123 Main St"}'
-
-# Get all users
-curl https://full-stack-assessment-0leg.onrender.com/api/users
 ```
+
+## Note
+
+This project was created as part of a technical assessment.
 
