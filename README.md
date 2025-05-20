@@ -7,13 +7,6 @@ A simple full-stack application that lets users submit and manage their personal
 - Frontend: [https://full-stack-assessment-ae.netlify.app/](https://full-stack-assessment-ae.netlify.app/)
 - Backend: [https://full-stack-assessment-0leg.onrender.com](https://full-stack-assessment-0leg.onrender.com)
 
-## What's Inside?
-
-- A clean form to collect user details (name, email, phone, address)
-- Backend API to store and fetch user information
-- Simple and responsive UI
-- RESTful API endpoints for CRUD operations
-
 ## Tech Used
 
 - Frontend: React.js
